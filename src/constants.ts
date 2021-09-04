@@ -1,6 +1,4 @@
-export enum ActionInputs {
-  Key = 'key',
-  Path = 'path',
-  RestoreKeys = 'restore-keys',
-  UploadChunkSize = 'upload-chunk-size',
+export enum Inputs {
+  Key = "key",
+  Path = "path",
 }

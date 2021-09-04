@@ -1,21 +1,23 @@
-import { setFailed } from '@actions/core'
-import { mkdirP, mv } from '@actions/io'
+import { setFailed } from "@actions/core";
+import { mkdirP, mv } from "@actions/io";
 
-import { getVars } from './lib/getVars'
-import log from './lib/log'
+import { getVars } from "./lib/getVars";
+import log from "./lib/log";
 
 async function post(): Promise<void> {
   try {
-    const { cacheDir, targetPath, cachePath } = getVars()
+    const { cacheTargets } = getVars();
 
-    await mkdirP(cacheDir)
-    await mv(targetPath, cachePath, { force: true })
+    for (const target of cacheTargets) {
+      await mkdirP(target.cacheDir);
+      await mv(target.targetPath, target.cachePath, { force: true });
+    }
   } catch (error) {
-    log.trace(error)
+    log.trace(error);
     if (error instanceof Error) {
-      setFailed(error.message)
+      setFailed(error.message);
     }
   }
 }
 
-post()
+post();
