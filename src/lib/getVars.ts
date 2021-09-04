@@ -5,7 +5,7 @@ import * as core from '@actions/core'
 const { GITHUB_REPOSITORY, RUNNER_TOOL_CACHE } = process.env
 const CWD = process.cwd()
 
-type Vars = {
+interface Vars {
   cacheDir: string
   cachePath: string
   options: {

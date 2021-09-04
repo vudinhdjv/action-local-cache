@@ -20,7 +20,9 @@ async function main(): Promise<void> {
     }
   } catch (error) {
     console.trace(error)
-    setFailed(error.message)
+    if (error instanceof Error) {
+      setFailed(error.message)
+    }
   }
 }
 

@@ -12,7 +12,9 @@ async function post(): Promise<void> {
     await mv(targetPath, cachePath, { force: true })
   } catch (error) {
     log.trace(error)
-    setFailed(error.message)
+    if (error instanceof Error) {
+      setFailed(error.message)
+    }
   }
 }
 
