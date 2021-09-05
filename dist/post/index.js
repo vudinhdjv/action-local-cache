@@ -8350,6 +8350,8 @@ __nccwpck_require__.r(__webpack_exports__);
 var core = __nccwpck_require__(2186);
 // EXTERNAL MODULE: ./node_modules/@actions/io/lib/io.js
 var io = __nccwpck_require__(7436);
+// EXTERNAL MODULE: ./node_modules/@actions/io/lib/io-util.js
+var io_util = __nccwpck_require__(1962);
 // EXTERNAL MODULE: external "path"
 var external_path_ = __nccwpck_require__(5622);
 // EXTERNAL MODULE: ./node_modules/fast-glob/out/index.js
@@ -8436,12 +8438,18 @@ if (process.env.LOG_LEVEL) {
 
 
 
+
 async function post() {
     try {
         const { cacheTargets } = getVars();
         for (const target of cacheTargets) {
-            await (0,io.mkdirP)(target.cacheDir);
-            await (0,io.mv)(target.targetPath, target.cachePath, { force: true });
+            if (await (0,io_util.exists)(target.targetPath)) {
+                await (0,io.mkdirP)(target.cacheDir);
+                await (0,io.mv)(target.targetPath, target.cachePath, { force: true });
+            }
+            else {
+                log.info(`Skipping: target not found for ${target.targetPath}.`);
+            }
         }
     }
     catch (error) {
