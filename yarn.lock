@@ -568,31 +568,6 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@stefanmaric/eslint-config-munchies-base@0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@stefanmaric/eslint-config-munchies-base/-/eslint-config-munchies-base-0.3.0.tgz#11f989e07d2fa3df2601a86d6ac9a44e732c57af"
-  integrity sha512-IADzQg0JZNk1PFjCxSdulAjFVk9gsvMcdE0NfUX3BmywUKu5I/VQ8MA6OBZi33lXqPHN1mNKVSIXgkgwzWyl4g==
-
-"@stefanmaric/eslint-config-munchies-gourmet@0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@stefanmaric/eslint-config-munchies-gourmet/-/eslint-config-munchies-gourmet-0.3.0.tgz#2574cc054d786a28979fcecfec9ac4d6a79f814d"
-  integrity sha512-693PhozEoPwN+lRdgxrll2wxvGU0fM9RF9funBg7NHtctn4HVGj2BS5N0VJxjL+7f2TUdtGmSjN5Q9/puPXcAQ==
-
-"@stefanmaric/eslint-config-munchies-modern@0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@stefanmaric/eslint-config-munchies-modern/-/eslint-config-munchies-modern-0.3.0.tgz#38de42f9acb562d9ae0d67aebdcd46ee8746075b"
-  integrity sha512-5hDDtvLTmC8Wvm/FHEPlSgy5HDZOMDZmG6+ywwOBJdZV8txDhv15W7uluh15sS+oWtzWPA4lQpdLlA5JBipl0g==
-
-"@stefanmaric/eslint-config-munchies-modules@0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@stefanmaric/eslint-config-munchies-modules/-/eslint-config-munchies-modules-0.3.0.tgz#ced4ba15ca0ea0c7cbe66be64d4ad779d84c7b48"
-  integrity sha512-1s8u6Yru/KY1oJFUdfegfrS7mkug2fXO53iCGZ2KKBDJ47D3srAXToipVEaOiNBiwvUnVTnW31oRpBnXHoe94w==
-
-"@stefanmaric/eslint-config-munchies-node@0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@stefanmaric/eslint-config-munchies-node/-/eslint-config-munchies-node-0.3.0.tgz#3a44319d6b59bcb86183d7faa265ee8e41389603"
-  integrity sha512-VJWd5cxuTOdte7lWagd3JOFc6TAU//99X8roDtqjwNzPWLkjZv1WrXlucoJWpYi4CLQdcWfBS6a4kbZvssnMgw==
-
 "@tootallnate/once@1":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-1.1.2.tgz#ccb91445360179a04e7fe6aff78c00ffc1eeaf82"
