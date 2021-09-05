@@ -5,7 +5,7 @@ import { getInputAsArray } from "../util/actionUtils";
 import { Inputs } from "../constants";
 
 const { GITHUB_REPOSITORY, RUNNER_TOOL_CACHE } = process.env;
-const CWD = process.cwd();
+export const workspace = process.env["GITHUB_WORKSPACE"] ?? process.cwd();
 
 interface CacheTarget {
   origPath: string;
@@ -26,7 +26,7 @@ interface Vars {
 
 function buildCacheTargets(rootCacheDir: string, paths: string[]): CacheTarget[] {
   return paths.map((path): CacheTarget => {
-    const targetPath = resolve(CWD, path);
+    const targetPath = resolve(workspace, path);
     const cachePath = join(rootCacheDir, path);
     return {
       origPath: path,
