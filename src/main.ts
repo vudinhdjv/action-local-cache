@@ -1,5 +1,5 @@
 import { setFailed, setOutput } from "@actions/core";
-import { mkdirP, mv } from "@actions/io/";
+import { cp, mkdirP } from "@actions/io/";
 import { exists } from "@actions/io/lib/io-util";
 
 import { getVars } from "./lib/getVars";
@@ -13,7 +13,7 @@ async function main(): Promise<void> {
     for (const target of cacheTargets) {
       if (await exists(target.cachePath)) {
         await mkdirP(target.targetDir);
-        await mv(target.cachePath, target.targetPath, { force: true });
+        await cp(target.cachePath, target.targetPath, { recursive: true, force: true });
         log.info(`Cache found and restored to ${target.origPath}`);
         hitCache = true;
       } else {

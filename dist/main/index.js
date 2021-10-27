@@ -8446,7 +8446,7 @@ async function main() {
         for (const target of cacheTargets) {
             if (await (0,io_util.exists)(target.cachePath)) {
                 await (0,io.mkdirP)(target.targetDir);
-                await (0,io.mv)(target.cachePath, target.targetPath, { force: true });
+                await (0,io.cp)(target.cachePath, target.targetPath, { recursive: true, force: true });
                 log.info(`Cache found and restored to ${target.origPath}`);
                 hitCache = true;
             }
