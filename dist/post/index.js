@@ -8445,7 +8445,8 @@ async function post() {
         for (const target of cacheTargets) {
             if (await (0,io_util.exists)(target.targetPath)) {
                 await (0,io.mkdirP)(target.cacheDir);
-                await (0,io.mv)(target.targetPath, target.cachePath, { force: true });
+                await (0,io.rmRF)(target.cachePath);
+                await (0,io.mv)(target.targetPath, target.cachePath);
             }
             else {
                 log.info(`Skipping: target not found for ${target.targetPath}.`);
